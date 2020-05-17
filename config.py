@@ -2,7 +2,9 @@ import os
 
 
 class Config:
-    pass
+    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI')
+    SQLALCHEMY_TRACK_MODIFICATIONS = os.getenv('SQLALCHEMY_TRACK_MODIFICATIONS' , False)
+
 
 
 class Development(Config):
@@ -10,4 +12,4 @@ class Development(Config):
 
 
 class Production(Config):
-    DEBUG = Falses
+    DEBUG = False
