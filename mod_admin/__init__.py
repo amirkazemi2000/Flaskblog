@@ -1,7 +1,5 @@
 from flask import Blueprint
 
-admin = Blueprint('admin' , __name__ , url_prefix= '/admin/')
+admin = Blueprint('admin' , __name__ )
 
-@admin.route('/')
-def admin_index():
-    return 'Hello from admin index'
+from .views import index , login
